@@ -1,0 +1,51 @@
+@include tablet{
+    .seccion-inferior{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 2rem;
+    }
+}
+
+.entrada-blog{
+    margin-bottom: 4rem;
+    border-bottom: 3px solid darken($color: $gris, $amount: 5);
+
+    @include tablet{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+}
+
+.informacion-meta{
+    span{
+        color: $amarillo;
+    }
+}
+
+.texto-entrada{
+    a{
+        color: $negro;
+        margin-top: 2rem;
+        display: block; //ya que los elementos enlace son por defecto inline el margin no lo aplicaria a menos que se le ponga display block
+        @include tablet{
+            margin-top: 0;
+        }
+    }
+    h4{
+        margin: 0;
+        line-height: 1.4;
+
+        &::after{ //despues del elemento h4 creamos un pseudo elemento
+            content: '';
+            display: block; //para que sea visible
+            width: 15rem; //ancho o largo
+            height: .3rem; //altura
+            background-color: $verde;
+            margin-top: 1rem;
+        }
+    }
+}

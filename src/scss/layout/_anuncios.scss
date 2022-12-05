@@ -1,0 +1,104 @@
+ @include tablet{ //en tamaño de tablet o superior queremos tres columnas
+     .contenedor-anuncios{
+         //@include grid(3,5rem);
+         display: grid;
+         grid-template-columns: minmax(0, auto) minmax(0, auto) minmax(0, auto);
+         grid-template-rows: minmax(0, auto);
+         gap: 1rem;
+     }
+ }
+
+ .anuncio{
+     background-color: lighten($color: $gris, $amount: 5);
+     border: 1px solid darken($color: $gris, $amount: 5);
+     //text-align: center;
+     margin-bottom: 2rem;
+
+     .contenido-anuncio{
+         padding: 2rem;
+     }
+
+     h3{
+         margin: 0;
+         text-align: center;
+         
+     }
+     p{
+        margin: 0;
+        word-wrap: break-word;
+        font-size: 1.8rem;
+        color: $negro;
+     }
+
+     .precio{
+        color: $verde;
+    }
+
+ }
+
+ .precio{
+     color: $verde;
+     font-weight: $bold;
+     font-size: 3rem;
+    display: inline-block;
+ }
+
+ //por defecto se ven en lista (arriba hacia abajo)
+ .iconos-caracteristicas{
+ //con display flex estos se posicionan horizontalmente
+     display: flex;
+     list-style: none;
+     padding: 0;
+    //max-width: 40rem;
+
+     li{
+         flex: 1; //cada uno toma un tamaño igual
+         display: flex; //para alinear horizontalmente
+
+         img{
+             flex: 0 0 3rem;
+             margin-right: 1rem;
+         }
+
+         p{
+             font-weight: $black;
+         }
+     }
+ }
+
+ .resumen-propiedad{
+     text-align: center;
+     padding: 0rem 2rem 0rem 2rem;
+    
+     p{
+        
+         word-wrap: break-word;
+     }
+    
+     ul{
+        width: 70%;
+         margin: auto;
+     }
+
+     @include tablet{
+         li{
+             padding-left: 6rem;
+         }
+     }
+ }
+
+.img-anuncio{
+    height: 40%;
+}
+
+ .descripcion-tamaño{
+    height: auto;
+ }
+
+ .precio-tamaño{
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+ }
+

@@ -1,0 +1,91 @@
+.alerta{
+
+    padding: .5rem;
+    text-align: center;
+    color: $blanco;
+    font-weight: $bold;
+    text-transform: uppercase;
+    margin: 1rem 0;
+
+    &.error{
+        background-color: $rojo;
+    }
+
+    &.exito{
+        background-color: $verde;
+    }
+} 
+
+table.propiedades{
+    margin-top: 4rem;
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0;
+    
+    thead{
+        background-color: $grisOscuro;
+
+        th{
+            color: $blanco;
+            padding: 2rem;
+        }
+    }
+
+    td {
+        border-bottom: 1px solid darken($color: $gris, $amount: 20);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+    .imagen-tabla{
+        max-width: 10rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+            
+    }
+
+}
+
+@media (max-width: 768px){
+
+    // table.propiedades{
+    //     width: 90%;
+    // }
+
+    table.propiedades td[data-titulo]{
+        display: flex;
+    }
+
+    table.propiedades td[data-titulo]::before{
+        content: attr(data-titulo);
+        width: 14rem;
+        border-right: 1px solid gray;
+    }
+
+    table.propiedades tr{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid gray;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    table.propiedades thead{
+        display: none;
+    }
+}
+
+.marginArriba{
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+}
+
+.tabla-botones{
+   padding-bottom: 2rem;
+   padding-left: 2rem;
+   padding-right: 2rem;
+}
